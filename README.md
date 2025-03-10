@@ -1,31 +1,29 @@
-# 🚀 To The Moon (or to something bigger? 😊): SpaceX Launch Explorer
+# 🚀 To The Moon (or to something bigger? 😊)
 
 ## Launch Sequence
 
 1. Launch the development server:
-\`\`\`bash
-npm run dev
-\`\`\`
+
+`npm run dev`
+
 
 2. Access the application at \`http://localhost:3000\`
 
 ## 🛠️ Development Tools
 
 - **Component Docs**:
-  \`\`\`bash
-  npm run storybook
-  \`\`\`
+
+  `npm run storybook`
+
 
 - **Testing**:
-  \`\`\`bash
+
   # Unit Tests
-  npm run test:unit
+  `npm run test:unit`
 
   # E2E Tests
-  npm run test:e2e
-  \`\`\`
+  `npm run test:e2e`
 
-![SpaceX Launch Explorer](https://images.unsplash.com/photo-1517976547714-720226b864c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80)
 ![UI](src/assets/image.png)
 
 ## 🌌 Mission Overview
