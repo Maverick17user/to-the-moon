@@ -54,7 +54,7 @@ const LaunchGrid = ({ initialLaunches }: LaunchGridProps) => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen space-y-6" data-testid="launch-grid">
       <header className="fixed top-0 left-0 right-0 z-50">
         <div className="bg-gray-900 border-b border-gray-800">
           <div className="w-full p-4 mx-auto sm:p-6">
@@ -77,6 +77,7 @@ const LaunchGrid = ({ initialLaunches }: LaunchGridProps) => {
               <SearchBar 
                 onSearchResults={handleSearchResults}
                 searchTerm={searchTerm}
+                data-testid="search-input"
               />
               {(!hasSearched || (hasSearched && searchResults.length > 0)) && (
                 <Pagination
@@ -86,6 +87,7 @@ const LaunchGrid = ({ initialLaunches }: LaunchGridProps) => {
                   itemsPerPage={itemsPerPage}
                   onPageChange={setCurrentPage}
                   onItemsPerPageChange={setItemsPerPage}
+                  data-testid="pagination-controls"
                 />
               )}
             </div>
@@ -93,7 +95,7 @@ const LaunchGrid = ({ initialLaunches }: LaunchGridProps) => {
         </div>
       </header>
 
-      <main className="flex-1 mt-[340px] px-4 sm:px-6">
+      <main className="px-4 sm:px-6" style={{ marginTop: '340px' }}>
         <section 
           className="grid grid-cols-1 gap-6 mx-auto sm:grid-cols-2 lg:grid-cols-3 max-w-7xl"
           aria-label="Launch missions"
@@ -114,6 +116,7 @@ const LaunchGrid = ({ initialLaunches }: LaunchGridProps) => {
               imageUrl={launch.links.flickr_images[0] || launch.links.mission_patch}
               fairingsRecovered={launch.rocket.fairings?.recovered ?? null}
               success={launch.launch_success}
+              data-testid="launch-card"
             />
           ))}
         </section>

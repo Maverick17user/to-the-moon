@@ -58,9 +58,8 @@ const LaunchCard = ({
 }: LaunchCardProps) => {
   return (
     <article 
-      className={`${CARD_CLASSES.base} ${CARD_CLASSES.border} ${CARD_CLASSES.glow}`} 
+      className={`${CARD_CLASSES.base} ${CARD_CLASSES.border} ${CARD_CLASSES.glow}`}
       tabIndex={0}
-      role="button"
       aria-label={`${missionName} mission details`}
     >
       <div className={CARD_CLASSES.wrapper}>

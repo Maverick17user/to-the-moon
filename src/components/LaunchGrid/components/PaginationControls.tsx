@@ -37,7 +37,9 @@ const PaginationControls = memo(({
       <NavigationButton
         onClick={() => handlePageClick(currentPage - 1)}
         disabled={currentPage === 1}
-        ariaLabel="Previous page"
+        title="Previous page"
+        ariaLabel="Go to previous page"
+        data-testid="prev-page"
       >
         <ChevronLeftIcon className="w-5 h-5" />
       </NavigationButton>
@@ -60,7 +62,8 @@ const PaginationControls = memo(({
       <NavigationButton
         onClick={() => handlePageClick(currentPage + 1)}
         disabled={currentPage === totalPages}
-        ariaLabel="Next page"
+        title="Next page"
+        ariaLabel="Go to next page"
       >
         <ChevronRightIcon className="w-5 h-5" />
       </NavigationButton>

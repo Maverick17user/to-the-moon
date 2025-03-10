@@ -9,7 +9,10 @@ interface HeaderProps {
 const Header = ({ missionName, missionId }: HeaderProps) => {
   return (
     <header className="flex flex-col gap-2">
-      <h2 className="text-xl font-bold tracking-tight text-gray-100 transition-colors duration-200 group-hover:text-blue-300">
+      <h2
+        className="text-xl font-bold text-gray-100 line-clamp-2"
+        data-testid="mission-name"
+      >
         {missionName}
       </h2>
       <MissionId missionId={missionId} />

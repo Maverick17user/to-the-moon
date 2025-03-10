@@ -22,6 +22,8 @@ interface UseSearchReturn {
   error: Error | null
 }
 
+export const SEARCH_DEBOUNCE_TIME = 500
+
 export const useSearch = ({ onResults }: UseSearchProps): UseSearchReturn => {
   const [searchTerm, setSearchTerm] = useState('')
   const [debouncedTerm, setDebouncedTerm] = useState('')
@@ -32,7 +34,9 @@ export const useSearch = ({ onResults }: UseSearchProps): UseSearchReturn => {
 
   const filteredLaunches = useMemo(() => {
     if (!searchData?.launches) return null
-    if (!debouncedTerm.trim()) return sortLaunchesByMissionName(searchData.launches)
+    if (!debouncedTerm.trim()) {
+      return sortLaunchesByMissionName(searchData.launches)
+    }
 
     const searchValue = debouncedTerm.trim().toLowerCase()
     const terms = searchValue.split(/\s+/).filter(Boolean)
@@ -54,7 +58,7 @@ export const useSearch = ({ onResults }: UseSearchProps): UseSearchReturn => {
 
   const handleSearch = useDebouncedCallback((value: string) => {
     setDebouncedTerm(value.trim())
-  }, 500)
+  }, SEARCH_DEBOUNCE_TIME)
 
   // Update UI immediately while search is being debounced
   const handleSearchImmediate = (value: string) => {
