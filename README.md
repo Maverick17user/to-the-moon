@@ -4,7 +4,9 @@
 
 1. Launch the development server:
 
-`npm run dev`
+- **Run project**:
+
+  `npm run dev`
 
 
 2. Access the application at \`http://localhost:3000\`
